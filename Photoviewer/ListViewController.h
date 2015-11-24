@@ -9,6 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface ListViewController : UITableViewController
+@interface ListViewController : UITableViewController <NSURLSessionDelegate>
+
+@property (nonatomic, strong) NSURLSession *session;
+@property (nonatomic, copy) NSArray *photos;
+
+@property (nonatomic, copy) void (^dataBlock)(NSData *data, NSURLResponse *response, NSError *error);
 
 @end

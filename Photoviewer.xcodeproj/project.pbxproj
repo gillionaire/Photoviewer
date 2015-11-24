@@ -14,6 +14,7 @@
 		56BD182C1C03EECD00A231FD /* PhotoviewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56BD182B1C03EECD00A231FD /* PhotoviewerTests.m */; };
 		56BD18371C03EECD00A231FD /* PhotoviewerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56BD18361C03EECD00A231FD /* PhotoviewerUITests.m */; };
 		56BD18461C03F17600A231FD /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56BD18451C03F17600A231FD /* ListViewController.m */; };
+		56FC6F861C04F8420016CE54 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56FC6F851C04F8420016CE54 /* WebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		56BD18381C03EECD00A231FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56BD18441C03F17600A231FD /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		56BD18451C03F17600A231FD /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		56FC6F841C04F8420016CE54 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		56FC6F851C04F8420016CE54 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,8 @@
 				56BD18151C03EECC00A231FD /* AppDelegate.m */,
 				56BD18441C03F17600A231FD /* ListViewController.h */,
 				56BD18451C03F17600A231FD /* ListViewController.m */,
+				56FC6F841C04F8420016CE54 /* WebViewController.h */,
+				56FC6F851C04F8420016CE54 /* WebViewController.m */,
 				56BD181D1C03EECC00A231FD /* Assets.xcassets */,
 				56BD181F1C03EECC00A231FD /* LaunchScreen.storyboard */,
 				56BD18221C03EECC00A231FD /* Info.plist */,
@@ -269,6 +274,7 @@
 				56BD18161C03EECC00A231FD /* AppDelegate.m in Sources */,
 				56BD18131C03EECC00A231FD /* main.m in Sources */,
 				56BD18461C03F17600A231FD /* ListViewController.m in Sources */,
+				56FC6F861C04F8420016CE54 /* WebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +490,7 @@
 				56BD183D1C03EECD00A231FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		56BD183E1C03EECD00A231FD /* Build configuration list for PBXNativeTarget "PhotoviewerTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +499,7 @@
 				56BD18401C03EECD00A231FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		56BD18411C03EECD00A231FD /* Build configuration list for PBXNativeTarget "PhotoviewerUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +508,7 @@
 				56BD18431C03EECD00A231FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
