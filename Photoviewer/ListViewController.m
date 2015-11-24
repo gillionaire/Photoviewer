@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  ListViewController.m
 //  Photoviewer
 //
 //  Created by Group10 on 11/23/15.
 //  Copyright © 2015 UHD. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ListViewController.h"
 
-@interface ViewController : UIViewController
-
+@implementation ListViewController
 
 @end
-
