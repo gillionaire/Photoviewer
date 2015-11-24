@@ -64,8 +64,33 @@
     
     [self.tableView registerClass:[UITableViewCell class]
            forCellReuseIdentifier:@"UITableViewCell"];
+    
+    [self.navigationController setToolbarHidden:NO];
+    
+    UIBarButtonItem *bbi = [[UIBarButtonItem alloc]
+                            initWithTitle:@"Random Picture"
+                            style:UIBarButtonItemStylePlain
+                            target:self
+                            action:@selector(randomPhoto:)];
+    [self setToolbarItems:[NSArray arrayWithObjects:bbi, nil]];
 }
 
+- (IBAction)randomPhoto:(id)sender{
+    NSUInteger randomIndex = arc4random() % [self.photos count];
+    NSDictionary *photo = self.photos[randomIndex];
+    NSURL *url = [NSURL URLWithString:photo[@"url_h"]];
+
+    if(!url){
+        [self randomPhoto:sender];
+    }
+    else{
+        self.webViewController.title = photo[@"title"];
+        self.webViewController.url = url;
+        
+        [[self navigationController] pushViewController:self.webViewController
+                                               animated:YES];
+    }
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -87,16 +112,34 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*NSDictionary *course = self.courses[indexPath.row];
-    NSURL *URL = [NSURL URLWithString:course[@"url"]];
+    NSDictionary *photo = self.photos[indexPath.row];
+    NSURL *url = [NSURL URLWithString:photo[@"url_h"]];
     
-    self.webViewController.title = course[@"title"];
-    self.webViewController.URL = URL;
+    if(url){
+    self.webViewController.title = photo[@"title"];
+    self.webViewController.url = url;
     
-    if(![self splitViewController])
-        [[self navigationController] pushViewController:_webViewController
-                                               animated:YES];
-    */
+    [[self navigationController] pushViewController:self.webViewController
+                                           animated:YES];
+    }
+    else{
+        UIAlertController *alertController = [UIAlertController
+                                              alertControllerWithTitle:@"No URL"
+                                              message:@"The link for this picture is missing"
+                                              preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction
+                                   actionWithTitle:NSLocalizedString(@"OK", @"OK action")
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction *action)
+                                   {
+                                       NSLog(@"OK action");
+                                   }];
+        
+        
+        [alertController addAction:okAction];
+        
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)io{

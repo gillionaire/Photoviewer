@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "WebViewController.h"
 
 @interface ListViewController : UITableViewController <NSURLSessionDelegate>
 
@@ -15,5 +16,6 @@
 @property (nonatomic, copy) NSArray *photos;
 
 @property (nonatomic, copy) void (^dataBlock)(NSData *data, NSURLResponse *response, NSError *error);
+@property (nonatomic, strong) WebViewController *webViewController;
 
 @end

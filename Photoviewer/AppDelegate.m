@@ -23,10 +23,12 @@
     ListViewController *lvc = [[ListViewController alloc] initWithStyle:UITableViewStylePlain];
     
     UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:lvc];
+    WebViewController *wvc = [[WebViewController alloc] init];
+    lvc.webViewController = wvc;
     
     [[self window] setRootViewController:masterNav];
     
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.backgroundColor = [UIColor blackColor];
     [self.window makeKeyAndVisible];
     
     return YES;
